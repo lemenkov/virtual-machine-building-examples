@@ -96,7 +96,7 @@ VIRTNAME=$KSNAME-`date +%Y-%m-%d-%H-%M`
 	--network=bridge:virbr0 \
 	${BRIDGE:+\-\-network\=bridge\:${BRIDGE}} \
 	--location=http://mirror.yandex.ru/centos/7/os/x86_64/ \
-	--extra-args="ks=http://${KSHOST}:8080/${KSNAME} ip=dhcp console=tty0 console=ttyS0,115200 ksdevice=eth0" \
+	--extra-args=\"ks=http://${KSHOST}:8080/${KSNAME} ip=dhcp console=tty0 console=ttyS0,115200 ksdevice=eth0\" \
 	--name=${VIRTNAME} \
 	--disk /var/lib/libvirt/images/${VIRTNAME}.img,size=${DISK_SIZE} \
 	--ram ${RAM_SIZE} \
