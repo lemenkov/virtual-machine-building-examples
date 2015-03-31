@@ -30,7 +30,7 @@ do
 		   HYPERVISOR=$2
 		   shift 2
 		   ;;
-	    --pidfile=?*)
+	    --hypervisor=?*)
 		   HYPERVISOR=${1#--hypervisor=}
 		   shift
 		   ;;
