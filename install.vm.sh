@@ -92,7 +92,7 @@ echo ${BRIDGE:+Extra bridge to connect\: ${BRIDGE}}
 KSHOST=`ssh ${USER}@${HYPERVISOR} avahi-resolve-host-name -4 kickstart.local|cut -f 2 | tr -d '\n'`
 VIRTNAME=$KSNAME-`date +%Y-%m-%d-%H-%M`
 
-virt-install --connect=qemu+ssh://${USER}@${HYPERVISOR}/system \
+/usr/bin/ssh ${USER}@${HYPERVISOR} virt-install --connect=qemu:///system \
 	--network=bridge:virbr0 \
 	${BRIDGE:+\-\-network\=bridge\:${BRIDGE}} \
 	--location=http://mirror.yandex.ru/centos/7/os/x86_64/ \
